@@ -26,8 +26,8 @@ jobs:
       - run: npm test
 
       - deploy:
-        name: deplopy image on master
-        command: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            docker build -t zackmattor/google-sheets-glossary .
-          fi
+          name: deplopy image on master
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              docker build -t zackmattor/google-sheets-glossary .
+            fi
