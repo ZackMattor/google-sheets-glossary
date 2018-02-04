@@ -25,6 +25,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: npm test
 
+      - setup_remote_docker
       - deploy:
           name: deplopy image on master
           command: |
