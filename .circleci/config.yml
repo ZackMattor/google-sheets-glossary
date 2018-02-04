@@ -24,3 +24,10 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: npm test
+
+      - deploy:
+        name: deplopy image on master
+        command: |
+          if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            docker build -t zackmattor/google-sheets-glossary .
+          fi
