@@ -30,5 +30,7 @@ jobs:
           name: deplopy image on master
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              docker build -t zackmattor/google-sheets-glossary .
+              docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+              docker build -t zackmattor/google-sheets-glossary:$CIRCLE_BRANCH .
+              docker push zackmattor/google-sheets-glossary:$CIRCLE_BRANCH
             fi
