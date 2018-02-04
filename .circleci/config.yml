@@ -29,4 +29,4 @@ jobs:
       - run: npm test
 
   deploy:
-      - run: docker build -t zackmattor/google-sheets-glossary
+      - command: docker build -t zackmattor/google-sheets-glossary
