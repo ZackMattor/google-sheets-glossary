@@ -22,6 +22,8 @@ let app = {
     this.data = [];
     this.fetchData();
 
+    setInterval(this.fetchData.bind(this), 60000)
+
     var app = express();
     app.engine('handlebars', exphbs({defaultLayout: 'main'}));
     app.set('view engine', 'handlebars');
