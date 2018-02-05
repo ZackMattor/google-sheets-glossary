@@ -4,7 +4,7 @@ const request = require('request');
 const csv     = require('csv');
 
 console.log(' --');
-console.log(' - Welcome to the google sheets glossary generator');
+console.log(' - Welcome to the google sheets glossary generator :)');
 console.log(' --');
 console.log('');
 
