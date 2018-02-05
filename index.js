@@ -26,7 +26,7 @@ let app = {
     app.engine('handlebars', exphbs({defaultLayout: 'main'}));
     app.set('view engine', 'handlebars');
     app.get('/', this.routeCallbacks.home.bind(this));
-    app.listen(8082);
+    app.listen(80);
   },
 
   fetchData() {
