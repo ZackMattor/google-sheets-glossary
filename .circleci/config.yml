@@ -31,6 +31,10 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-              docker build -t zackmattor/google-sheets-glossary:$CIRCLE_BRANCH .
-              docker push zackmattor/google-sheets-glossary:$CIRCLE_BRANCH
+
+              # build docker image
+              docker build -t zackmattor/google-sheets-glossary:latest .
+              docker tag zackmattor/google-sheets-glossary:latest zackmattor/google-sheets-glossary:$CIRCLE_SHA1
+              docker push zackmattor/google-sheets-glossary:$CIRCLE_SHA1
+              docker push zackmattor/google-sheets-glossary:latest
             fi
