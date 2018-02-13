@@ -1,6 +1,10 @@
-{{#each data.terms}}
-  <div class="term">
-    <span class="word">{{this.word}}: </span>
-    <span class="desc">{{this.desc}}</span>
-  </div>
-{{/each}}
+<input placeholder="Search..." id="filter"></input>
+
+<div class="terms">
+  {{#each data.terms}}
+    <div class="term">
+      <h2>{{this.word}}</h2>
+      <span class="desc">{{this.desc}}</span>
+    </div>
+  {{/each}}
+</div>
